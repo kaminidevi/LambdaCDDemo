@@ -16,7 +16,7 @@ def lambda_handler(event, context):
                 "end": "P0D"
                 }
             ))
-    OutputFormat = "png"
+    #OutputFormat = "png"
     #print(response.keys())
     return {
         "statuscode" : 200,
