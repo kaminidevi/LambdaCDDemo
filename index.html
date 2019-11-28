@@ -15,22 +15,13 @@
                 "end": "P0D"
                 }
     </script>
-
-    <script>
-        var list = [] ;
-        var widgets = document.getElementsByName('widgetDefinition');
-        widgets.forEach((val, key, arr) => { 
-            list.push(JSON.parse(val.innerHTML)) ; 
-        });
-
-        (function (w,d,s,o,f,js,fjs) {
-            w['CW-Widget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
-            js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-            js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-        }(window, document, 'script', 'cw', './widget.js'));
-        cw('widget', { url: '<YOUR_APIGATEWAY_URL>',
-                       widget : list
-                     });
-    </script>
 </body>
+<body>
+  <div align="center">
+    <h1>Congratulations!</h1>
+    <h2>You have successfully created a cloudwatch dashboard WidgetImage.</h2>
+    <p>For next steps, read the AWS CodePipeline Documentation.</p>
+  </div>
+</body>    
+    
 </html>
