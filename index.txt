@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Demo page of the WidgetImage</title>
+</head>
+<body>
+
+    <script type="application/json" name="widgetDefinition">
+      {
+                "view": "timeSeries",
+                "stacked": False,
+                "metrics": [[ "AWS/Lambda", "Duration", "FunctionName", "indlasdemo2-saaLambdaCheckOpenDevices-KSHBXB8JWNK6" ]],
+                "width": 1054,
+                "height": 180,
+                "start": "-PT3H",
+                "end": "P0D"
+                }
+    </script>
+
+    <script>
+        var list = [] ;
+        var widgets = document.getElementsByName('widgetDefinition');
+        widgets.forEach((val, key, arr) => { 
+            list.push(JSON.parse(val.innerHTML)) ; 
+        });
+
+        (function (w,d,s,o,f,js,fjs) {
+            w['CW-Widget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+            js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+            js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', 'cw', './widget.js'));
+        cw('widget', { url: '<YOUR_APIGATEWAY_URL>',
+                       api_key: '<YOUR_API_KEY>', 
+                       widget : list
+                     });
+    </script>
+</body>
+</html>
