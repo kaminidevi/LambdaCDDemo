@@ -29,7 +29,6 @@
             js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
         }(window, document, 'script', 'cw', './widget.js'));
         cw('widget', { url: '<YOUR_APIGATEWAY_URL>',
-                       api_key: '<YOUR_API_KEY>', 
                        widget : list
                      });
     </script>
