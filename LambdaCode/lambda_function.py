@@ -1,3 +1,4 @@
+from io import BytesIO
 import boto3
 import json
 import base64
@@ -16,10 +17,10 @@ def lambda_handler(event, context):
                 "end": "P0D"
                 }
                 ))
-    #OutputFormat = "png"
+    OutputFormat = "png"
     #print(response.keys())
     return {
         "statuscode" : 200,
         "body" : base64.b64encode(response['MetricWidgetImage']).decode(encoding='utf-8'),
-        "isBase64Encoded": False,
+        "isBase64Encoded": True,
         }         
