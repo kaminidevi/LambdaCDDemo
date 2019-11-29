@@ -9,4 +9,5 @@ build:
 artifacts:
   type: zip
   files:
+    - samTemplate.yaml
     - outputtestSamTemplate.yaml
