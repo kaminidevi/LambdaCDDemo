@@ -2,8 +2,9 @@ version: 0.1
 phases:
   install:
      runtime-versions:
-       python: 3.6
-    commands:
+       python: 3.8
+build:       
+   commands:
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket kamini-testbucket --output-template-file outputtestSamTemplate.yaml
 artifacts:
   type: zip
