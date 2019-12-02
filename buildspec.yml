@@ -3,8 +3,9 @@ phases:
   install:
      runtime-versions:
        python: 3.8       
-  commands:
-     - aws cloudformation package --template-file samTemplate.yaml --s3-bucket test-lambdawidemo --output-template-file ISamTemplate.yaml
+build:
+   commands:
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket test-lambdawidemo --output-template-file ISamTemplate.yaml
 artifacts:
   type: zip
   files:
