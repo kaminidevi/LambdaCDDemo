@@ -5,9 +5,10 @@ phases:
        python: 3.8     
 build:
    commands:
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket test-lambdawidemo --output-template-file outimage.yaml
+      - sam package --template-file samTemplate.yaml --output-template-file package.yml --s3-bucket test-lambdawidemo
+      - sam deploy --template-file package.yml --stack-name my-sam-application --capabilities CAPABILITY_IAM
 artifacts:
   type: zip
   files:
     - samTemplate.yaml
-    - outimage.yaml
+    - package.yml
