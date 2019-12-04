@@ -5,7 +5,7 @@ Resources:
   CDDemoLambda:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: lambda_function.lambda_handler
+      Handler: lambda_function.handler
       Runtime: python3.8
       CodeUri: ./LambdaCode
       Description: 'Lambda function for CD Demo'
@@ -18,6 +18,4 @@ Resources:
           Properties:
             Path: /getazs
             Method: get
-      Environment:
-        Variables:
-          REGION: eu-west-1
+      
