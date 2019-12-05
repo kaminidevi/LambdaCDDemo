@@ -6,7 +6,6 @@ phases:
 build:
    commands:
       - sam package --template-file samTemplate.yaml --output-template-file package.yml --s3-bucket test-lambdawidemo
-      - sam deploy --template-file package.yml --stack-name my-sam-application --capabilities CAPABILITY_IAM
 artifacts:
   type: zip
   files:
